@@ -1,0 +1,13 @@
+.sidebar{
+    background: #27324a;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.sidebar ul li a{
+    color: #fff;
+}
+
+.app-name{
+    padding: 0 20px;
+}
