@@ -1,8 +1,5 @@
-# Documentation
+<!-- docs/_sidebar.md -->
 
-- Pour commencer
-
-  - [Quick start](README.md)
-  - [Writing more pages](more-pages.md)
-  - [Custom navbar](custom-navbar.md)
-  - [Cover page](cover.md)
+* [Introduction](/)
+* [Catégories](local_cat.md)
+* [Pages](local_pages.md)

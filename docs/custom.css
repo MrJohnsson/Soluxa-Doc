@@ -11,3 +11,52 @@
 .app-name{
     padding: 0 20px;
 }
+
+h3#documentation{
+    text-align: center;
+}
+
+h3#documentation span{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+}
+
+.sidebar .search input{
+    border-radius: 20px;
+    padding: 0 15px;
+    margin: 10px;
+    background: rgba(255,255,255,0.3);
+    color: #fff;
+}
+
+.sidebar .search input::placeholder{
+    color: #bbb;
+}
+
+.sidebar .search{
+    border-bottom: 1px solid #5f6b85;
+}
+
+.sidebar li.active{
+    background-color: #1a2232;
+    border-left: 7px solid #14a0eb;
+}
+
+.sidebar ul li.active>a{
+    color: #fff;
+    border-right: 0;
+}
+
+.sidebar-nav > ul{
+    margin: 0;
+}
+
+.sidebar-nav > ul > ul{
+    margin: 0 0 0 30px;
+}
+
+.sidebar-nav > ul > li{
+    padding-left: 15px;
+}
