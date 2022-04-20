@@ -1,6 +1,6 @@
 # Fiche produit
 
-## Code utile
+### Code utile
 
 ```php
 // Nom 1
