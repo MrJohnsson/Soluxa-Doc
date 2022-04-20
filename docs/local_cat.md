@@ -2,51 +2,43 @@
 
 ## Code utile
 
-#### Nom 1
-
 ```php
+// Nom 1
 eCat::text(eSystem::config('cat'),'name')
 ```
 
-#### Nom 2
 
 ```php
+// Nom 2
 eCat::text(eSystem::config('cat'),'title')
 ```
 
-#### Description de la catégorie
-
 ```php
+// Description de la catégorie
 eCat::$values['cat'][eSystem::config('cat')]['text'][eSystem::config('lng')]['desc']
 ```
 
-#### Code
-
 ```php
+// Code
 eCat::data(eSystem::config('cat'),'code')
 ```
 
-#### Tag
-
 ```php
+// Tag
 eCat::data(eSystem::config('cat'),'tag1')
 ```
 
-#### Options
-
 ```php
+// Options
 eCat::data(eSystem::config('cat'),'options')
 ```
 
-#### IMG 1
-
 ```php
+// Image 1
 eCat::data(eSystem::config('cat'),'image1')
 ```
 
-#### IMG 2
-
 ```php
+// Image 2
 eCat::data(eSystem::config('cat'),'image2')
 ```
-

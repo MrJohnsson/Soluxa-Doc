@@ -11,22 +11,24 @@
 > :warning: Si on ne le modifie pas les données du site copié seront écrasées
 
 
-    <?php
-    /*==================================================================*/
-    /*  CMS SOLUXA																										  */
-    /*  www.soluxa.com            	                          				  */
-    /*==================================================================*/
-    /*                              	                                  */
-    /*  START CMS                                                     	*/
-    /*  					                                                    	*/
-    /*==================================================================*/
+```php
+<?php
+/*==================================================================*/
+/*  CMS SOLUXA																										  */
+/*  www.soluxa.com            	                          				  */
+/*==================================================================*/
+/*                              	                                  */
+/*  START CMS                                                     	*/
+/*  					                                                    	*/
+/*==================================================================*/
 
-        //define('SRC_ID', 'src1'); //eg, "demo"		
-        $GLOBALS['slx_config']['src_id'] = '000demo'; // l'identifiant est à mettre à la place de '000demo'
-        
-        require_once('../../_slx/start.php');
-        
-    ?>
+    //define('SRC_ID', 'src1'); //eg, "demo"		
+    $GLOBALS['slx_config']['src_id'] = '000demo'; // l'identifiant est à mettre à la place de '000demo'
+    
+    require_once('../../_slx/start.php');
+    
+?>
+```
 
 
 ### Skins

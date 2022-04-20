@@ -2,34 +2,39 @@
 
 ## Code utile
 
-#### Nom
-
 ```php
+// Nom
 eArray::getVal($data,'text['.eSystem::config('lng').'][name]')
 ```
 
-#### Description courte
-
 ```php
+// Description courte
 eArray::getVal($data,'text['.eSystem::config('lng').'][short]')
 ```
 
-#### Description 1
-
 ```php
+// Description 1
 eArray::getVal($data,'text['.eSystem::config('lng').'][text1]')
 ```
 
-#### Description 2
-
 ```php
+// Description 2
 eArray::getVal($data,'text['.eSystem::config('lng').'][text2]')
 ```
 
-#### Code
+```php
+// Code
+eArray::getVal($data,'code')
+```
 
 ```php
-eArray::getVal($data,'code')
+// Option
+eArray::getVal($data,'data[options]')
+```
+
+```php
+// Tag
+eArray::getVal($data,'data[tag1]')
 ```
 
 #### NoTitle
@@ -43,18 +48,6 @@ eArray::getVal($data,'data[notitle]')
 ```php
 //cas d'utilisation
 if(empty(eArray::getVal($data,'data[notitle]'))) { echo '<h2>'.eArray::getVal($data,'text['.eSystem::config('lng').'][name]').'</h2>'; }
-```
-
-#### Option
-
-```php
-eArray::getVal($data,'data[options]')
-```
-
-#### Tag
-
-```php
-eArray::getVal($data,'data[tag1]')
 ```
 
 ## Génération des images
