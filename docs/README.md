@@ -64,3 +64,12 @@ l’ensemble des vues concernant la boutique en ligne. Cela concerne les vues de
 # Administration
 
 > Sur tout site on accède à l'administration simplement en ajoutant /admin à l'url du site
+
+![administration](/media/admin.jpg)
+
+1. Accéder au site public
+2. Réglages du site
+3. **Clic sur l'icône** : accéder aux paramètres de la catégorie (nom, type etc...)
+4. **Clic sur le nom de** : accéder aux pages de la catégorie
+5. Définir la page d'accueil
+6. Accéder à la page publique
