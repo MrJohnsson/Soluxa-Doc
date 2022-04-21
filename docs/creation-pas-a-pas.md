@@ -9,7 +9,9 @@ Comme dis dans l'introduction, la première étape est d'attribuer l'identifiant
 
 C'est ce fichier qui contient la structure globale du site. On y trouve l'en-tête, le header, menu, footer etc... En un mot tout ce qui n'est pas le contenu des pages web.
 
-Voilà un exemple du minimum en terme de PHP que doit contenir le fichier afin de faire tourner le site :
+La première étape est donc de transformer votre fichier de maquette html en skin.php, ce qui consiste à remplacer tout le contenu par certaines instructions et fonctions PHP qui feront appel à la base de donnée afin d'obtenir un site dynamique.
+
+Voilà un exemple du minimum en terme de PHP que doit contenir le fichier afin de pouvoir faire tourner le site :
 
 ```php
 <!DOCTYPE HTML>
@@ -82,6 +84,7 @@ if(eSystem::isHome()){
 ```
 ### Afficher un page-top (une bannière qui contient le nom de la catégorie et une image en fond)
 
+> Code à placer dans skin.php
 ```php
 <div <?php eBlock::show('cat_bg'); ?>>  <!-- bloc pour afficher l'image de la catégorie en page-top -->
 	<div class="titre">
@@ -95,8 +98,66 @@ if(eSystem::isHome()){
 			echo eSystem::skin('meta_title'); // si ni l'un ni l'autre n'est renseigné on affiche le meta title
 		} ?></h1>
 
-		<?php if(!empty(eCat::text(eSystem::config('cat'),'name'))) eBlock::show('breadcrumps'); ?> 
+		<?php eBlock::show('breadcrumps'); //affichage du fil d'ariane ?> 
 	</div>
 </div> <!--page-top-->
 ```
 
+> Code du bloc cat_bg (qui se trouve dans local/blocks/default/cat_bg.php)
+```php
+<?php
+	if(empty($type)) $type = 'image1';
+	$image = eCat::data(eSystem::config('cat'),$type); // on regarde si l'image1 de la catégorie est renseignée
+	if(empty($image)) {
+		$content = '';
+
+		$content = 'class="page-top no-img"';	// si il n'y a pas d'image voilà ce qu'on affiche
+
+		echo $content;
+		return false;
+	}else{
+
+	$content = 'class="page-top" style="background:url('.$image.') no-repeat center;background-size: cover;"'; //sinon on affiche l'image en background
+
+	echo $content;
+
+	}
+?>
+```
+
+## Afficher du contenu pour certaines pages générées automatiquement
+
+> Il peut arriver que certaines pages précises nécessitent un conteneur mais on ne peut pas modifier leur vue.
+> Pour cela on peut les détecter avec leur type et afficher du code spécifique
+
+```php
+if(eSystem::config('mod') == 'sitemap')  // plan du site
+if(eSystem::config('mod') == 'search')   // résultat de la recherche
+if(eSystem::config('mod') == 'facture')  // page spécifique pour payer une facture
+```
+
+# 2. Création de l'arborescence via l'administration
+
+A ce stade là vous ne devriez pas voir grand chose car sur le site car la base de donnée est encore vide.
+Nous allons commencer à ajouter du contenu en commençant par l'arborescence.
+
+Rendez-vous donc sur l'admin (en ajoutant /admin à l'url du site), vous arrivez sur l'arborescence.
+Cliquez sur "Ajoutez une nouvelle catégorie", vous obtenez la même chose que la capture ci-dessous :
+
+![ajout d'une catégorie](/media/admin-cat.jpg)
+
+> Voilà ce à quoi correspond chaque élément :
+> 1. Accéder aux paramètres généraux des catégories
+> 2. Ajouter une page à l'intérieur de la catégorie (pensez à d'abord créer la catégorie en cliquant sur enregistrer)
+> 3. Permet de dupliquer une catégorie déjà créée (seule la catégorie est copiée, cela n'inclue pas les pages qu'elle contient)
+> 4. Cette case définit la page d'accueil
+> 5. Cette case permet d'activer ou désactiver la catégorie. Si elle est désactivée la catégorie n'apparaîtra pas dans le menu mais sera toujours accessible via le lien direct
+> 6. Le code permet de créer une variante. Les différents codes sont ajoutés dans les paramètres généraux (1)
+> 7. L'aperçu est ce qui définit quel type de contenu est affiché (par défaut "pages", sinon cela peut être "news" pour les actualités, "mod : shop" pour une catégorie de produits, "link :" permet de rediriger vers une autre page, interne ou externe)
+> 8. Le tag peut être utilisé pour y insérer une information, on peut le récupérer pour appliquer une classe particulière à une div par ex.
+> 9. L'image 1 correspond à ce qu'on utilise pour le page-top. Le menu déroulant affiche les images du dossier img/cat, c'est à configurer dans les paramètre généraux.
+> 10. On peut avoir une deuxième image, par exemple pour une miniature lorsque on a un sous-menu avec des images
+> 11. Options est une autre façon d'ajouter une information
+
+
+Renseigner le Nom (12)
