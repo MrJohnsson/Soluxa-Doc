@@ -138,10 +138,10 @@ if(eSystem::config('mod') == 'facture')  // page spécifique pour payer une fact
 
 # 2. Création de l'arborescence via l'administration
 
-A ce stade là vous ne devriez pas voir grand chose car sur le site car la base de donnée est encore vide.
+A ce stade là vous ne devriez pas voir grand chose car sur le site car la base de donnée est encore vide.<br>
 Nous allons commencer à ajouter du contenu en commençant par l'arborescence.
 
-Rendez-vous donc sur l'admin (en ajoutant /admin à l'url du site), vous arrivez sur l'arborescence.
+Rendez-vous donc sur l'admin (en ajoutant /admin à l'url du site), vous arrivez sur l'arborescence.<br>
 Cliquez sur "Ajoutez une nouvelle catégorie", vous obtenez la même chose que la capture ci-dessous :
 
 ![ajout d'une catégorie](/media/admin-cat.jpg)
@@ -158,6 +158,14 @@ Cliquez sur "Ajoutez une nouvelle catégorie", vous obtenez la même chose que l
 > 9. L'image 1 correspond à ce qu'on utilise pour le page-top. Le menu déroulant affiche les images du dossier img/cat, c'est à configurer dans les paramètre généraux.
 > 10. On peut avoir une deuxième image, par exemple pour une miniature lorsque on a un sous-menu avec des images
 > 11. Options est une autre façon d'ajouter une information
+> 12. Nom de la catégorie
+> 13. Cette case permet de désactiver la catégorie uniquement dans la langue en cours d'édition.
+> 14. Nom 2, il permet d'avoir un nom différent entre le menu et le nom que l'on affiche dans le contenu.
+> 15. Description de la catégorie
+> 16. Métadonnées
+> 17. Enregistrer et rester sur la page
+> 18. Enregistrer et retourner en arrière
 
-
-Renseigner le Nom (12)
+Commencez par la page d'accueil en renseignant le nom (12) et en cliquant sur la case accueil (14).<br>
+Cliquez sur enregistrer et retourner puis recliquez sur "Ajouter une nouvelle catégorie" afin de continuer votre arborescence.<br>
+Afin de créer un sous-menu il suffit de cliquer sur le nom de la catégorie parente puis de cliquer sur "Ajouter une nouvelle catégorie"
